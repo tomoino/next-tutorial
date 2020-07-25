@@ -1,5 +1,6 @@
 # next-tutorial
 Next.jsのチュートリアル
+This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 
 # 参考
 [公式チュートリアル](https://nextjs.org/learn/basics/create-nextjs-app)
