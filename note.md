@@ -25,7 +25,7 @@ npm init next-app nextjs-blog --example "https://github.com/vercel/next-learn-st
 ```
 
 ### 開発サーバーを動かす
-Nuxtと同じ。
+Nuxtと同じ。 Hot Reloadingという特徴を持っており、更新したらすぐに反映される。
 ```
 # npm
 npm run dev
@@ -33,3 +33,14 @@ npm run dev
 # yarn
 yarn dev
 ```
+
+## ルーティングとページ遷移
+pages内の構成によってルーティングが決まる。
+### ページ遷移
+Linkタグを使う。
+```js
+import Link from 'next/link'
+
+<Link href="/posts/first-post"><a>this page!</a></Link>
+```
+> You can learn more about the Link component [in the API reference documentation](https://nextjs.org/docs/api-reference/next/link) and routing in general [in the routing documentation](https://nextjs.org/docs/routing/introduction).
