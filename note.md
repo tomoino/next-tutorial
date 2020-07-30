@@ -44,3 +44,24 @@ import Link from 'next/link'
 <Link href="/posts/first-post"><a>this page!</a></Link>
 ```
 > You can learn more about the Link component [in the API reference documentation](https://nextjs.org/docs/api-reference/next/link) and routing in general [in the routing documentation](https://nextjs.org/docs/routing/introduction).
+
+## 静的アセットの扱い
+画像などはpublic配下に入れる。
+
+## メタデータ
+```js
+import Head from 'next/head'
+
+<Head>
+    <title>Create Next App</title>
+</Head>
+```
+
+## CSSスタイリング
+Reactコンポーネント内でCSSを書くことができる。
+styled-jsxというCSS-in-JSのライブラリを使用。
+```html
+<style jsx>{`
+   ...
+`}</style>
+```
