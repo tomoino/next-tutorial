@@ -65,3 +65,23 @@ styled-jsxというCSS-in-JSのライブラリを使用。
    ...
 `}</style>
 ```
+
+### Layout
+すべてのページで共通して使う Layout コンポーネント。
+components/layout.jsを作って、importしてもっとも外側のタグとして使う。
+
+### CSSモジュール
+React コンポーネントの中でインポートすることができる CSS ファイル。
+
+CSS モジュールは自動的に一意のクラス名を生成するため、CSS モジュールを使っているかぎりは、クラス名の衝突を気にする必要はない。
+* 拡張子は.module.cssとして、components内に作る。
+* stylesとしてimportする。
+```js
+import styles from './layout.module.css'
+```
+* styles.class名 を className として使う
+```js
+export default function Layout({ children }) {
+  return <div className={styles.container}>{children}</div>
+}
+```
