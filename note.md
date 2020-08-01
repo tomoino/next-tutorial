@@ -85,3 +85,12 @@ export default function Layout({ children }) {
   return <div className={styles.container}>{children}</div>
 }
 ```
+
+### グローバルなスタイリング：Appコンポーネントの利用
+ CSS を すべての ページで読み込みたい場合、pages ディレクトリ配下に _app.js というファイルを作成する。Appコンポーネントは全ページ共通のトップレベルコンポーネント。
+ ```js
+export default function App({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+ ```
+styles/global.cssを作成し、Appコンポーネントで読み込む。
