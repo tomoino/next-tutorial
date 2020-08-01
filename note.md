@@ -1,5 +1,4 @@
-# Next.jsについて
-## Next.jsとは
+# Next.jsとは
 Next.jsはReactのフレームワークの一つ。
 以下のような特徴がある。
 
@@ -12,7 +11,7 @@ Next.jsはReactのフレームワークの一つ。
 > * サーバレス関数を用いて API エンドポイントを構築するための API ルート
 > * 完全に拡張可能であるという点
 
-## Next.jsの始め方
+# Next.jsの始め方
 ```bash
 npm init next-app nextjs-blog
 ```
@@ -24,7 +23,7 @@ Defaultにするか、Templateを使うか聞かれる。
 npm init next-app nextjs-blog --example "https://github.com/vercel/next-learn-starter/tree/master/learn-starter"
 ```
 
-### 開発サーバーを動かす
+## 開発サーバーを動かす
 Nuxtと同じ。 Hot Reloadingという特徴を持っており、更新したらすぐに反映される。
 ```
 # npm
@@ -34,9 +33,9 @@ npm run dev
 yarn dev
 ```
 
-## ルーティングとページ遷移
+# ルーティングとページ遷移
 pages内の構成によってルーティングが決まる。
-### ページ遷移
+## ページ遷移
 Linkタグを使う。
 ```js
 import Link from 'next/link'
@@ -45,10 +44,10 @@ import Link from 'next/link'
 ```
 > You can learn more about the Link component [in the API reference documentation](https://nextjs.org/docs/api-reference/next/link) and routing in general [in the routing documentation](https://nextjs.org/docs/routing/introduction).
 
-## 静的アセットの扱い
+# 静的アセットの扱い
 画像などはpublic配下に入れる。
 
-## メタデータ
+# メタデータ
 ```js
 import Head from 'next/head'
 
@@ -57,7 +56,7 @@ import Head from 'next/head'
 </Head>
 ```
 
-## CSSスタイリング
+# CSSスタイリング
 Reactコンポーネント内でCSSを書くことができる。
 styled-jsxというCSS-in-JSのライブラリを使用。
 ```html
@@ -66,11 +65,11 @@ styled-jsxというCSS-in-JSのライブラリを使用。
 `}</style>
 ```
 
-### Layout
+## Layout
 すべてのページで共通して使う Layout コンポーネント。
 components/layout.jsを作って、importしてもっとも外側のタグとして使う。
 
-### CSSモジュール
+## CSSモジュール
 React コンポーネントの中でインポートすることができる CSS ファイル。
 
 CSS モジュールは自動的に一意のクラス名を生成するため、CSS モジュールを使っているかぎりは、クラス名の衝突を気にする必要はない。
@@ -86,7 +85,7 @@ export default function Layout({ children }) {
 }
 ```
 
-### グローバルなスタイリング：Appコンポーネントの利用
+## グローバルなスタイリング：Appコンポーネントの利用
  CSS を すべての ページで読み込みたい場合、pages ディレクトリ配下に _app.js というファイルを作成する。Appコンポーネントは全ページ共通のトップレベルコンポーネント。
  ```js
 export default function App({ Component, pageProps }) {
@@ -94,3 +93,15 @@ export default function App({ Component, pageProps }) {
 }
  ```
 styles/global.cssを作成し、Appコンポーネントで読み込む。
+
+## スタイリングに関するTips
+* クラスを切り替えるために classnames ライブラリを使う。
+  * [README](https://github.com/JedWatson/classnames)
+```sh
+npm install classnames # or yarn add classnames
+```
+* PostCSS
+  * 設定不要でNext.js は CSS を PostCSS を使ってコンパイルする。
+* Sass
+  * 初期設定のまま.scss/.sass両方を使える。
+  * CSS モジュールと .module.scss または .module.sass 拡張子を介して、コンポーネントレベルの Sass を使用することができる。
