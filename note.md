@@ -139,3 +139,25 @@ export async function getStaticProps() {
     // ファイルシステムや API、DB などから外部データを取得する
     cons
 ```
+
+# 動的ルーティング
+Nextでは、外部データに依存するパスを持ったページを静的に生成することができる。
+## 実装手順
+1. pages/以下に[id].jsのような括弧で囲まれたファイル名のjsファイルを作る。(動的なページ)
+2. id として とりうる値 のリストを返す getStaticPaths という async 関数を export する。
+3. getStaticProps で受け取った id に基づいて必要なデータを取得する。
+```js
+import Layout from '../../components/layout'
+
+export default function Post() {
+  return <Layout>...</Layout>
+}
+
+export async function getStaticPaths() {
+  // id としてとりうる値のリストを返す
+}
+
+export async function getStaticProps({ params }) {
+  // params.id を使用して、ブログの投稿に必要なデータを取得する
+}
+```
