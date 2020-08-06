@@ -161,3 +161,13 @@ export async function getStaticProps({ params }) {
   // params.id を使用して、ブログの投稿に必要なデータを取得する
 }
 ```
+
+## markdownのレンダー
+remarkライブラリを使う。
+```
+npm install remark remark-html
+```
+```js
+import remark from 'remark'
+import html from 'remark-html'
+```
