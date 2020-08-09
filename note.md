@@ -171,3 +171,14 @@ npm install remark remark-html
 import remark from 'remark'
 import html from 'remark-html'
 ```
+
+# APIルート
+Next.js アプリの中に API エンドポイントを作成することができる。
+pages/api下にファイルを作る。
+
+```js
+// req = リクエストデータ, res = レスポンスデータ
+export default (req, res) => {
+  // ...
+}
+```
