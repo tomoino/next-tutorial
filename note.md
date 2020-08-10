@@ -182,3 +182,8 @@ export default (req, res) => {
   // ...
 }
 ```
+
+# デプロイ
+Vercelにデプロイするのが簡単。
+* [Sign up](https://vercel.com/signup)
+* [リポジトリをimportする](https://vercel.com/import/git)
