@@ -187,3 +187,11 @@ export default (req, res) => {
 Vercelにデプロイするのが簡単。
 * [Sign up](https://vercel.com/signup)
 * [リポジトリをimportする](https://vercel.com/import/git)
+
+# TypeScript
+```
+touch tsconfig.json
+yarn add --dev typescript @types/react @types/node
+yarn dev
+touch next-env.d.ts
+```
